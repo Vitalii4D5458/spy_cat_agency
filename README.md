@@ -252,7 +252,7 @@ The database file (`spy_cat_agency.db`) is created automatically on first run.
 ### Running in Development Mode
 
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uvicorn main:app --reload
 ```
 
 ### Testing

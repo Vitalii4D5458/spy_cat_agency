@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Test script for Spy Cat Agency API
-Run this script to verify all endpoints are working correctly
-"""
-
 import requests
 import json
 import time
