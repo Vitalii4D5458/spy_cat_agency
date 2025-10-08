@@ -258,11 +258,3 @@ uvicorn main:app --reload
 ### Testing
 
 You can test the API using the provided Postman collection or by accessing the interactive documentation at `http://localhost:8000/docs`.
-
-## License
-
-This project is part of a technical assessment for the Spy Cat Agency.
-
----
-
-**Note**: This application is designed for the Spy Cat Agency's internal use. All spy cats are fictional and any resemblance to real cats is purely coincidental.
