@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "spy-cat-agency-api",
+    "name": "Spy Cat Agency API",
+    "description": "Complete API collection for Spy Cat Agency management system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Spy Cats",
+      "item": [
+        {
+          "name": "Create Spy Cat",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Whiskers\",\n    \"years_of_experience\": 5,\n    \"breed\": \"Persian\",\n    \"salary\": 50000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/spy-cats/",
+              "host": ["{{base_url}}"],
+              "path": ["spy-cats", ""]
+            }
+          }
+        },
+        {
+          "name": "List Spy Cats",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/spy-cats/",
+              "host": ["{{base_url}}"],
+              "path": ["spy-cats", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Spy Cat",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/spy-cats/{{cat_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["spy-cats", "{{cat_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Spy Cat",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"salary\": 60000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/spy-cats/{{cat_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["spy-cats", "{{cat_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Spy Cat",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/spy-cats/{{cat_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["spy-cats", "{{cat_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Missions",
+      "item": [
+        {
+          "name": "Create Mission",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"targets\": [\n        {\n            \"name\": \"John Doe\",\n            \"country\": \"USA\"\n        },\n        {\n            \"name\": \"Jane Smith\",\n            \"country\": \"Canada\"\n        }\n    ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/missions/",
+              "host": ["{{base_url}}"],
+              "path": ["missions", ""]
+            }
+          }
+        },
+        {
+          "name": "List Missions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/missions/",
+              "host": ["{{base_url}}"],
+              "path": ["missions", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Mission",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/missions/{{mission_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["missions", "{{mission_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Assign Cat to Mission",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"cat_id\": {{cat_id}}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/missions/{{mission_id}}/assign",
+              "host": ["{{base_url}}"],
+              "path": ["missions", "{{mission_id}}", "assign"]
+            }
+          }
+        },
+        {
+          "name": "Delete Mission",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/missions/{{mission_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["missions", "{{mission_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Targets",
+      "item": [
+        {
+          "name": "Update Target",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"notes\": \"Target spotted at downtown cafe. Meeting with unknown contact.\",\n    \"is_completed\": false\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/targets/{{target_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["targets", "{{target_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Mark Target as Complete",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"is_completed\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/targets/{{target_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["targets", "{{target_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "General",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": ["{{base_url}}"],
+              "path": [""]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "cat_id",
+      "value": "1"
+    },
+    {
+      "key": "mission_id",
+      "value": "1"
+    },
+    {
+      "key": "target_id",
+      "value": "1"
+    }
+  ]
+}
